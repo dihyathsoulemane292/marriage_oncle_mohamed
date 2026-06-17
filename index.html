@@ -1,0 +1,1034 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mariage de Koda 6 & Hamdiath ♥</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Amiri:ital,wght@0,400;0,700;1,400&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --gold: #C9A84C;
+      --gold-light: #E8CF7A;
+      --gold-dark: #9A6F2E;
+      --rose: #8B1A3F;
+      --rose-light: #C94070;
+      --creme: #FDF6E3;
+      --creme-dark: #F0E6C8;
+      --noir: #1A0A0F;
+      --blanc: #FFFDF5;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Cormorant Garamond', serif;
+      background: var(--noir);
+      color: var(--creme);
+      overflow-x: hidden;
+    }
+
+    /* ── PARTICULES ── */
+    #particles-canvas {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; width: 100%;
+      z-index: 100;
+      background: linear-gradient(180deg, rgba(26,10,15,0.95) 0%, transparent 100%);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: center;
+      gap: 2.5rem;
+    }
+    nav a {
+      color: var(--gold-light);
+      text-decoration: none;
+      font-family: 'Cinzel Decorative', serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      transition: color 0.3s;
+    }
+    nav a:hover { color: #fff; }
+
+    /* ── HERO ── */
+    #hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 8rem 2rem 4rem;
+      background:
+        radial-gradient(ellipse at 50% 0%, rgba(201,168,76,0.18) 0%, transparent 65%),
+        radial-gradient(ellipse at 50% 100%, rgba(139,26,63,0.25) 0%, transparent 65%),
+        linear-gradient(180deg, #1A0A0F 0%, #2A0D18 50%, #1A0A0F 100%);
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    .arabesque-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Cpath d='M40 5 Q55 20 40 40 Q25 20 40 5Z' fill='none' stroke='%23C9A84C' stroke-width='0.4' opacity='0.12'/%3E%3Cpath d='M5 40 Q20 55 40 40 Q20 25 5 40Z' fill='none' stroke='%23C9A84C' stroke-width='0.4' opacity='0.12'/%3E%3Cpath d='M75 40 Q60 55 40 40 Q60 25 75 40Z' fill='none' stroke='%23C9A84C' stroke-width='0.4' opacity='0.12'/%3E%3Cpath d='M40 75 Q55 60 40 40 Q25 60 40 75Z' fill='none' stroke='%23C9A84C' stroke-width='0.4' opacity='0.12'/%3E%3C/svg%3E");
+      opacity: 0.6;
+    }
+
+    .bismillah {
+      font-family: 'Amiri', serif;
+      font-size: clamp(1.4rem, 4vw, 2.2rem);
+      color: var(--gold-light);
+      margin-bottom: 1.5rem;
+      letter-spacing: 0.05em;
+      text-shadow: 0 0 30px rgba(201,168,76,0.4);
+      animation: fadeDown 1s ease 0.2s both;
+    }
+
+    .hero-eyebrow {
+      font-family: 'Cinzel Decorative', serif;
+      font-size: clamp(0.65rem, 2vw, 0.85rem);
+      letter-spacing: 0.3em;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 1.2rem;
+      animation: fadeDown 1s ease 0.4s both;
+    }
+
+    .hero-title {
+      font-family: 'Cinzel Decorative', serif;
+      font-size: clamp(2.2rem, 8vw, 5.5rem);
+      font-weight: 900;
+      line-height: 1.1;
+      background: linear-gradient(135deg, var(--gold-light) 0%, #fff 40%, var(--gold) 70%, var(--gold-dark) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 0.5rem;
+      animation: fadeDown 1s ease 0.6s both;
+    }
+
+    .hero-and {
+      font-family: 'Dancing Script', cursive;
+      font-size: clamp(2rem, 6vw, 4rem);
+      color: var(--rose-light);
+      margin: 0.3rem 0;
+      animation: fadeDown 1s ease 0.8s both;
+    }
+
+    .hero-subtitle {
+      font-family: 'Cinzel Decorative', serif;
+      font-size: clamp(1.4rem, 5vw, 3.2rem);
+      font-weight: 700;
+      background: linear-gradient(135deg, var(--creme) 0%, var(--gold-light) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: fadeDown 1s ease 1s both;
+    }
+
+    .gold-divider {
+      width: 200px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      margin: 2rem auto;
+      position: relative;
+      animation: fadeIn 1s ease 1.2s both;
+    }
+    .gold-divider::before {
+      content: '✦';
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      color: var(--gold);
+      font-size: 0.9rem;
+      background: #1A0A0F;
+      padding: 0 0.5rem;
+    }
+
+    .hero-date {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1rem, 3vw, 1.4rem);
+      font-style: italic;
+      color: var(--creme-dark);
+      letter-spacing: 0.1em;
+      animation: fadeIn 1s ease 1.4s both;
+    }
+
+    .hero-hearts {
+      font-size: 1.5rem;
+      margin-top: 1rem;
+      animation: pulse 2s ease infinite;
+    }
+
+    /* ── COUNTDOWN ── */
+    #countdown {
+      position: relative;
+      z-index: 1;
+      background: linear-gradient(180deg, #1A0A0F 0%, #200C15 100%);
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+
+    .countdown-title {
+      font-family: 'Cinzel Decorative', serif;
+      font-size: clamp(0.7rem, 2vw, 0.9rem);
+      letter-spacing: 0.3em;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 2.5rem;
+    }
+
+    .countdown-grid {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .countdown-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .countdown-number {
+      font-family: 'Cinzel Decorative', serif;
+      font-size: clamp(2.5rem, 8vw, 5rem);
+      font-weight: 900;
+      background: linear-gradient(135deg, var(--gold-light), var(--gold));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1;
+      min-width: 2.5ch;
+      text-align: center;
+    }
+
+    .countdown-label {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      color: var(--gold-dark);
+      text-transform: uppercase;
+    }
+
+    .countdown-sep {
+      font-family: 'Cinzel Decorative', serif;
+      font-size: 3rem;
+      color: var(--rose);
+      align-self: center;
+      padding-bottom: 1.2rem;
+      opacity: 0.7;
+    }
+
+    /* ── COUPLE ── */
+    #couple {
+      position: relative;
+      z-index: 1;
+      padding: 5rem 2rem;
+      background: linear-gradient(180deg, #200C15 0%, #1A0A0F 100%);
+    }
+
+    .section-title {
+      font-family: 'Cinzel Decorative', serif;
+      font-size: clamp(1.2rem, 4vw, 2rem);
+      text-align: center;
+      color: var(--gold-light);
+      letter-spacing: 0.1em;
+      margin-bottom: 0.5rem;
+    }
+
+    .section-arabic {
+      font-family: 'Amiri', serif;
+      font-size: clamp(1.2rem, 3vw, 1.8rem);
+      text-align: center;
+      color: var(--gold);
+      direction: rtl;
+      margin-bottom: 3rem;
+    }
+
+    .couple-wrapper {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      gap: 2rem;
+      align-items: start;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .person-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.2rem;
+    }
+
+    .photo-frame {
+      position: relative;
+      width: clamp(160px, 30vw, 240px);
+      height: clamp(200px, 38vw, 300px);
+    }
+
+    .photo-frame::before {
+      content: '';
+      position: absolute;
+      inset: -8px;
+      border: 2px solid var(--gold);
+      border-radius: 60% 40% 60% 40% / 40% 60% 40% 60%;
+      animation: rotate-border 8s linear infinite;
+    }
+
+    .photo-frame::after {
+      content: '';
+      position: absolute;
+      inset: -4px;
+      border: 1px solid rgba(201,168,76,0.4);
+      border-radius: 40% 60% 40% 60% / 60% 40% 60% 40%;
+      animation: rotate-border 12s linear infinite reverse;
+    }
+
+    .photo-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top;
+      border-radius: 50% 50% 50% 50% / 40% 40% 60% 60%;
+      border: 4px solid var(--gold-dark);
+      filter: sepia(10%) brightness(1.05) contrast(1.05);
+    }
+
+    .person-name {
+      font-family: 'Cinzel Decorative', serif;
+      font-size: clamp(0.85rem, 3vw, 1.2rem);
+      color: var(--gold-light);
+      text-align: center;
+      letter-spacing: 0.05em;
+    }
+
+    .person-role {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      color: var(--rose-light);
+      font-size: 1rem;
+      text-align: center;
+    }
+
+    .couple-center {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      padding-top: 3rem;
+    }
+
+    .couple-rings {
+      font-size: 2.5rem;
+      animation: pulse 3s ease infinite;
+    }
+
+    .couple-and-text {
+      font-family: 'Dancing Script', cursive;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      background: linear-gradient(135deg, var(--rose-light), var(--gold));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* ── GALERIE ── */
+    #galerie {
+      position: relative;
+      z-index: 1;
+      padding: 5rem 2rem;
+      background: #1A0A0F;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+      max-width: 1100px;
+      margin: 3rem auto 0;
+    }
+
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 4px;
+      border: 1px solid rgba(201,168,76,0.2);
+      cursor: pointer;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      object-position: top;
+      transition: transform 0.6s ease, filter 0.6s ease;
+      filter: sepia(15%) brightness(0.9);
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.06);
+      filter: sepia(5%) brightness(1.05);
+    }
+
+    .gallery-item::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 60%, rgba(26,10,15,0.7) 100%);
+      pointer-events: none;
+    }
+
+    /* ── EVENT INFO ── */
+    #event {
+      position: relative;
+      z-index: 1;
+      padding: 5rem 2rem;
+      background: linear-gradient(135deg, #200C15 0%, #1A0A0F 50%, #200C15 100%);
+      text-align: center;
+    }
+
+    .event-cards {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 2rem;
+      max-width: 900px;
+      margin: 3rem auto 0;
+    }
+
+    .event-card {
+      background: linear-gradient(135deg, rgba(201,168,76,0.08), rgba(139,26,63,0.08));
+      border: 1px solid rgba(201,168,76,0.3);
+      border-radius: 2px;
+      padding: 2.5rem 2rem;
+      flex: 1;
+      min-width: 200px;
+      max-width: 280px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .event-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    }
+
+    .event-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .event-card-title {
+      font-family: 'Cinzel Decorative', serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.25em;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+
+    .event-card-value {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.1rem, 3vw, 1.5rem);
+      font-weight: 600;
+      color: var(--creme);
+      line-height: 1.4;
+    }
+
+    .event-card-sub {
+      font-style: italic;
+      font-size: 0.9rem;
+      color: var(--gold-dark);
+      margin-top: 0.5rem;
+    }
+
+    /* ── VŒUX ── */
+    #voeux {
+      position: relative;
+      z-index: 1;
+      padding: 5rem 2rem;
+      background: #1A0A0F;
+      text-align: center;
+    }
+
+    .voeux-container {
+      max-width: 800px;
+      margin: 3rem auto 0;
+    }
+
+    .voeu-block {
+      padding: 3rem 2rem;
+      margin-bottom: 2rem;
+      position: relative;
+      border: 1px solid rgba(201,168,76,0.2);
+    }
+
+    .voeu-block::before, .voeu-block::after {
+      content: '◆';
+      position: absolute;
+      color: var(--gold);
+      font-size: 0.6rem;
+    }
+    .voeu-block::before { top: -0.35rem; left: 1rem; }
+    .voeu-block::after  { bottom: -0.35rem; right: 1rem; }
+
+    .voeu-arabic {
+      font-family: 'Amiri', serif;
+      font-size: clamp(1.5rem, 4vw, 2.2rem);
+      color: var(--gold-light);
+      direction: rtl;
+      line-height: 2;
+      margin-bottom: 1.5rem;
+      text-shadow: 0 0 20px rgba(201,168,76,0.2);
+    }
+
+    .voeu-french {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1rem, 2.5vw, 1.3rem);
+      font-style: italic;
+      color: var(--creme-dark);
+      line-height: 1.9;
+    }
+
+    .voeu-source {
+      font-family: 'Cinzel Decorative', serif;
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      color: var(--gold-dark);
+      margin-top: 1rem;
+      text-transform: uppercase;
+    }
+
+    /* ── DUA ── */
+    #dua {
+      position: relative;
+      z-index: 1;
+      padding: 6rem 2rem;
+      background: linear-gradient(180deg, #1A0A0F 0%, #0D0508 100%);
+      text-align: center;
+    }
+
+    .dua-box {
+      max-width: 700px;
+      margin: 3rem auto 0;
+      padding: 3rem 2.5rem;
+      background: linear-gradient(135deg, rgba(201,168,76,0.06), rgba(139,26,63,0.1));
+      border: 1px solid rgba(201,168,76,0.25);
+      position: relative;
+    }
+
+    .dua-box::before {
+      content: '"';
+      position: absolute;
+      top: -1.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: 'Amiri', serif;
+      font-size: 5rem;
+      color: var(--gold);
+      opacity: 0.3;
+      line-height: 1;
+    }
+
+    .dua-arabic {
+      font-family: 'Amiri', serif;
+      font-size: clamp(1.6rem, 5vw, 2.5rem);
+      color: var(--gold-light);
+      direction: rtl;
+      line-height: 2.2;
+      margin-bottom: 2rem;
+    }
+
+    .dua-french {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1rem, 2.5vw, 1.2rem);
+      font-style: italic;
+      color: var(--creme);
+      line-height: 2;
+    }
+
+    /* ── MABROOK FINALE ── */
+    #finale {
+      position: relative;
+      z-index: 1;
+      padding: 5rem 2rem;
+      background: linear-gradient(180deg, #0D0508 0%, #1A0A0F 100%);
+      text-align: center;
+    }
+
+    .mabrook {
+      font-family: 'Amiri', serif;
+      font-size: clamp(3rem, 10vw, 7rem);
+      color: var(--gold);
+      direction: rtl;
+      text-shadow: 0 0 60px rgba(201,168,76,0.5);
+      animation: glow 3s ease infinite alternate;
+    }
+
+    .mabrook-fr {
+      font-family: 'Cinzel Decorative', serif;
+      font-size: clamp(0.8rem, 2.5vw, 1.1rem);
+      letter-spacing: 0.3em;
+      color: var(--gold-dark);
+      text-transform: uppercase;
+      margin-top: 1rem;
+    }
+
+    .finale-hearts {
+      font-size: clamp(1.5rem, 4vw, 2.5rem);
+      margin-top: 2rem;
+      animation: pulse 2s ease infinite;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      position: relative;
+      z-index: 1;
+      background: #0D0508;
+      padding: 2rem;
+      text-align: center;
+      border-top: 1px solid rgba(201,168,76,0.15);
+    }
+
+    footer p {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.85rem;
+      color: var(--gold-dark);
+      font-style: italic;
+    }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50%       { transform: scale(1.08); }
+    }
+
+    @keyframes rotate-border {
+      from { transform: rotate(0deg); }
+      to   { transform: rotate(360deg); }
+    }
+
+    @keyframes glow {
+      from { text-shadow: 0 0 20px rgba(201,168,76,0.3); }
+      to   { text-shadow: 0 0 80px rgba(201,168,76,0.8), 0 0 120px rgba(201,168,76,0.4); }
+    }
+
+    /* ── SCROLL REVEAL ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 600px) {
+      .couple-wrapper {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+      }
+      .couple-center { padding-top: 0; }
+      .countdown-sep { display: none; }
+      nav { gap: 1rem; flex-wrap: wrap; justify-content: center; }
+      nav a { font-size: 0.6rem; }
+    }
+  </style>
+</head>
+<body>
+
+<canvas id="particles-canvas"></canvas>
+
+<!-- NAV -->
+<nav>
+  <a href="#hero">Accueil</a>
+  <a href="#couple">Le Couple</a>
+  <a href="#galerie">Galerie</a>
+  <a href="#event">Cérémonie</a>
+  <a href="#voeux">Vœux</a>
+  <a href="#dua">Dua</a>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="arabesque-bg"></div>
+
+  <div class="bismillah">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</div>
+  <div class="hero-eyebrow">✦ Célébration de notre Union Sacrée ✦</div>
+
+  <h1 class="hero-title">Mouhamed Mandè<br/>dit Koda 6</h1>
+  <div class="hero-and">&amp;</div>
+  <h2 class="hero-subtitle">Atacora Hamdiath</h2>
+
+  <div class="gold-divider"></div>
+
+  <p class="hero-date">Samedi 20 Juin 2026 · à 8h00 précise</p>
+  <p class="hero-date" style="margin-top:0.4rem; font-size:0.95rem; opacity:0.75;">Mosquée de Toukourou — Spécialement à l'Auto-Garde</p>
+
+  <div class="hero-hearts">💛 ❤️ 💛</div>
+</section>
+
+<!-- COUNTDOWN -->
+<section id="countdown">
+  <div class="countdown-title">✦ Le Grand Jour Approche ✦</div>
+  <div class="countdown-grid">
+    <div class="countdown-item">
+      <span class="countdown-number" id="cd-days">--</span>
+      <span class="countdown-label">Jours</span>
+    </div>
+    <div class="countdown-sep">:</div>
+    <div class="countdown-item">
+      <span class="countdown-number" id="cd-hours">--</span>
+      <span class="countdown-label">Heures</span>
+    </div>
+    <div class="countdown-sep">:</div>
+    <div class="countdown-item">
+      <span class="countdown-number" id="cd-mins">--</span>
+      <span class="countdown-label">Minutes</span>
+    </div>
+    <div class="countdown-sep">:</div>
+    <div class="countdown-item">
+      <span class="countdown-number" id="cd-secs">--</span>
+      <span class="countdown-label">Secondes</span>
+    </div>
+  </div>
+</section>
+
+<!-- COUPLE -->
+<section id="couple">
+  <div class="section-title reveal">Le Couple</div>
+  <div class="section-arabic reveal">قلبان يلتقيان في رحمة الله</div>
+
+  <div class="couple-wrapper reveal">
+    <!-- MARIÉ -->
+    <div class="person-card">
+      <div class="photo-frame">
+        <img src="WhatsApp_Image_2026-06-17_at_16_04_09__1_.jpeg" alt="Mouhamed mandè dit Koda 6"/>
+      </div>
+      <div class="person-name">Mouhamed Mandè<br/>dit Koda 6</div>
+      <div class="person-role">Le Marié ♥</div>
+    </div>
+
+    <!-- CENTER -->
+    <div class="couple-center">
+      <div class="couple-rings">💍</div>
+      <div class="couple-and-text">&amp;</div>
+      <div class="couple-rings">💍</div>
+    </div>
+
+    <!-- MARIÉE -->
+    <div class="person-card">
+      <div class="photo-frame">
+        <img src="WhatsApp_Image_2026-06-17_at_16_04_10__3_.jpeg" alt="Atacora Hamdiath"/>
+      </div>
+      <div class="person-name">Atacora<br/>Hamdiath</div>
+      <div class="person-role">La Mariée ♥</div>
+    </div>
+  </div>
+</section>
+
+<!-- GALERIE -->
+<section id="galerie">
+  <div class="section-title reveal">Notre Galerie</div>
+  <div class="section-arabic reveal">لحظات الفرح والحب</div>
+
+  <div class="gallery-grid reveal">
+    <div class="gallery-item">
+      <img src="WhatsApp_Image_2026-06-17_at_16_04_09.jpeg" alt="Photo mariage 1"/>
+    </div>
+    <div class="gallery-item">
+      <img src="WhatsApp_Image_2026-06-17_at_16_04_09__1_.jpeg" alt="Photo mariage 2"/>
+    </div>
+    <div class="gallery-item">
+      <img src="WhatsApp_Image_2026-06-17_at_16_04_10.jpeg" alt="Photo mariage 3"/>
+    </div>
+    <div class="gallery-item">
+      <img src="WhatsApp_Image_2026-06-17_at_16_04_10__1_.jpeg" alt="Photo mariage 4"/>
+    </div>
+    <div class="gallery-item">
+      <img src="WhatsApp_Image_2026-06-17_at_16_04_10__2_.jpeg" alt="Photo mariage 5"/>
+    </div>
+    <div class="gallery-item">
+      <img src="WhatsApp_Image_2026-06-17_at_16_04_10__3_.jpeg" alt="Photo mariage 6"/>
+    </div>
+    <div class="gallery-item">
+      <img src="WhatsApp_Image_2026-06-17_at_16_04_11.jpeg" alt="Photo mariage 7"/>
+    </div>
+    <div class="gallery-item">
+      <img src="WhatsApp_Image_2026-06-17_at_16_04_11__1_.jpeg" alt="Photo mariage 8"/>
+    </div>
+    <div class="gallery-item">
+      <img src="WhatsApp_Image_2026-06-17_at_16_04_12.jpeg" alt="Photo mariage 9"/>
+    </div>
+  </div>
+</section>
+
+<!-- EVENT -->
+<section id="event">
+  <div class="section-title reveal">La Cérémonie</div>
+  <div class="section-arabic reveal">حفل الزفاف المبارك</div>
+
+  <div class="event-cards">
+    <div class="event-card reveal">
+      <div class="event-icon">📅</div>
+      <div class="event-card-title">Date</div>
+      <div class="event-card-value">Samedi<br/>20 Juin 2026</div>
+      <div class="event-card-sub">يوم السبت</div>
+    </div>
+
+    <div class="event-card reveal" style="transition-delay:0.2s">
+      <div class="event-icon">🕗</div>
+      <div class="event-card-title">Heure</div>
+      <div class="event-card-value">8h00<br/>Précise</div>
+      <div class="event-card-sub">في الثامنة صباحاً</div>
+    </div>
+
+    <div class="event-card reveal" style="transition-delay:0.4s">
+      <div class="event-icon">🕌</div>
+      <div class="event-card-title">Lieu</div>
+      <div class="event-card-value">Mosquée de<br/>Toukourou</div>
+      <div class="event-card-sub">Spécialement à l'Auto-Garde</div>
+    </div>
+  </div>
+</section>
+
+<!-- VŒUX -->
+<section id="voeux">
+  <div class="section-title reveal">Vœux & Paroles de Mariage</div>
+  <div class="section-arabic reveal">أجمل الدعاء والتهاني</div>
+
+  <div class="voeux-container">
+
+    <!-- Voeu 1 -->
+    <div class="voeu-block reveal">
+      <div class="voeu-arabic">
+        بَارَكَ اللَّهُ لَكُمَا وَبَارَكَ عَلَيْكُمَا وَجَمَعَ بَيْنَكُمَا فِي خَيْرٍ
+      </div>
+      <div class="voeu-french">
+        Que Allah bénisse ce qui vous appartient et répande Ses bénédictions sur vous,<br/>
+        et qu'Il unisse vos cœurs dans la bonté et la miséricorde.
+      </div>
+      <div class="voeu-source">✦ Doua du Prophète ﷺ pour les mariés ✦</div>
+    </div>
+
+    <!-- Voeu 2 -->
+    <div class="voeu-block reveal">
+      <div class="voeu-arabic">
+        وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا<br/>
+        وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً
+      </div>
+      <div class="voeu-french">
+        "Et parmi Ses signes, Il a créé pour vous, de vous-mêmes, des épouses<br/>
+        afin que vous trouviez auprès d'elles quiétude et repos,<br/>
+        et Il a mis entre vous affection et miséricorde."
+      </div>
+      <div class="voeu-source">✦ Sourate Ar-Roum : 21 ✦</div>
+    </div>
+
+    <!-- Voeu 3 -->
+    <div class="voeu-block reveal">
+      <div class="voeu-arabic">
+        جَعَلَ اللَّهُ مَحَبَّتَكُمَا نُورًا، لِدَرْبِكُمَا<br/>
+        وَأَلَّفَ بَيْنَ قُلُوبِكُمَا وَأَسْكَنَكُمَا السَّكِينَةَ وَالْمَوَدَّةَ وَالرَّحْمَة
+      </div>
+      <div class="voeu-french">
+        Que Allah fasse de votre amour une lumière sur votre chemin,<br/>
+        qu'Il unisse vos cœurs et vous accorde la quiétude, l'affection et la miséricorde.<br/>
+        Que votre foyer soit rempli de baraka, de bonheur et de prospérité.
+      </div>
+      <div class="voeu-source">✦ Voeux de Bonheur ✦</div>
+    </div>
+
+    <!-- Voeu 4 -->
+    <div class="voeu-block reveal">
+      <div class="voeu-arabic">أَطِيبُ التَّهَانِي وَأَصْدَقُ الدُّعَاء</div>
+      <div class="voeu-french">
+        Que Dieu fasse de votre amour une source de paix, de compréhension et de réussite.<br/>
+        Que votre union soit bénie du début jusqu'à la fin,<br/>
+        et que chaque jour soit meilleur que le précédent.
+      </div>
+      <div class="voeu-source">✦ Toutes nos félicitations ! ✦</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- DUA -->
+<section id="dua">
+  <div class="section-title reveal">La Dua du Jour de Noces</div>
+  <div class="section-arabic reveal">دُعَاءُ لَيْلَةِ الزِّفَاف</div>
+
+  <div class="dua-box reveal">
+    <div class="dua-arabic">
+      اللَّهُمَّ إِنِّي أَسْأَلُكَ خَيْرَهَا وَخَيْرَ مَا جَبَلْتَهَا عَلَيْهِ،<br/>
+      وَأَعُوذُ بِكَ مِنْ شَرِّهَا وَشَرِّ مَا جَبَلْتَهَا عَلَيْهِ
+    </div>
+    <div class="dua-french">
+      "O Allah ! Je Te demande ce qu'il y a de bien en elle<br/>
+      et le bien de ce à quoi Tu l'as prédisposée,<br/>
+      et je cherche refuge en Toi contre ce qu'il y a de mal en elle<br/>
+      et le mal de ce à quoi Tu l'as prédisposée."
+    </div>
+    <div class="voeu-source" style="margin-top:1.5rem">✦ Dua du Prophète ﷺ lors du mariage ✦</div>
+  </div>
+</section>
+
+<!-- FINALE -->
+<section id="finale">
+  <div class="reveal">
+    <div class="mabrook">أَلْفُ مَبْرُوكٍ</div>
+    <div class="mabrook-fr">✦ Mille Félicitations ✦</div>
+  </div>
+
+  <div class="gold-divider reveal" style="margin-top:3rem"></div>
+
+  <div class="finale-hearts reveal">
+    💛 &nbsp; ❤️ &nbsp; 💛 &nbsp; ❤️ &nbsp; 💛
+  </div>
+
+  <p class="reveal" style="font-family:'Cormorant Garamond',serif; font-size:1.1rem; font-style:italic; color:var(--creme-dark); margin-top:2rem; max-width:500px; margin-left:auto; margin-right:auto; line-height:1.9;">
+    Que le mariage de <strong style="color:var(--gold-light)">Koda 6</strong> et <strong style="color:var(--gold-light)">Hamdiath</strong><br/>
+    soit rempli d'amour, de grâce et de baraka.<br/>
+    Amine 🤲
+  </p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>Mariage de Mouhamed Mandè dit Koda 6 &amp; Atacora Hamdiath · 20 Juin 2026</p>
+  <p style="margin-top:0.4rem; font-size:0.75rem; opacity:0.5;">بَارَكَ اللَّهُ فِيكُمَا</p>
+</footer>
+
+<script>
+  /* ── PARTICLES ── */
+  const canvas = document.getElementById('particles-canvas');
+  const ctx = canvas.getContext('2d');
+  let particles = [];
+
+  function resizeCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  }
+  resizeCanvas();
+  window.addEventListener('resize', resizeCanvas);
+
+  const SYMBOLS = ['✦', '♥', '◆', '✿', '❋', '◇'];
+  const COLORS  = ['rgba(201,168,76,', 'rgba(232,207,122,', 'rgba(201,120,76,'];
+
+  function createParticle() {
+    return {
+      x: Math.random() * canvas.width,
+      y: -20,
+      size: Math.random() * 12 + 6,
+      speed: Math.random() * 1.2 + 0.4,
+      drift: (Math.random() - 0.5) * 0.8,
+      opacity: Math.random() * 0.5 + 0.1,
+      symbol: SYMBOLS[Math.floor(Math.random() * SYMBOLS.length)],
+      color: COLORS[Math.floor(Math.random() * COLORS.length)],
+      spin: (Math.random() - 0.5) * 0.03,
+      angle: 0,
+    };
+  }
+
+  function animateParticles() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    if (Math.random() < 0.15) particles.push(createParticle());
+    if (particles.length > 60) particles.splice(0, 1);
+
+    particles.forEach((p, i) => {
+      p.y += p.speed;
+      p.x += p.drift;
+      p.angle += p.spin;
+      p.opacity -= 0.0008;
+
+      if (p.y > canvas.height + 30 || p.opacity <= 0) {
+        particles.splice(i, 1);
+        return;
+      }
+
+      ctx.save();
+      ctx.translate(p.x, p.y);
+      ctx.rotate(p.angle);
+      ctx.font = `${p.size}px serif`;
+      ctx.fillStyle = p.color + p.opacity + ')';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.fillText(p.symbol, 0, 0);
+      ctx.restore();
+    });
+
+    requestAnimationFrame(animateParticles);
+  }
+  animateParticles();
+
+  /* ── COUNTDOWN ── */
+  function updateCountdown() {
+    const target = new Date('2026-06-20T08:00:00').getTime();
+    const now    = Date.now();
+    const diff   = target - now;
+
+    if (diff <= 0) {
+      ['cd-days','cd-hours','cd-mins','cd-secs'].forEach(id => {
+        document.getElementById(id).textContent = '00';
+      });
+      return;
+    }
+
+    const d = Math.floor(diff / 86400000);
+    const h = Math.floor((diff % 86400000) / 3600000);
+    const m = Math.floor((diff % 3600000)  / 60000);
+    const s = Math.floor((diff % 60000)    / 1000);
+
+    document.getElementById('cd-days').textContent  = String(d).padStart(2,'0');
+    document.getElementById('cd-hours').textContent = String(h).padStart(2,'0');
+    document.getElementById('cd-mins').textContent  = String(m).padStart(2,'0');
+    document.getElementById('cd-secs').textContent  = String(s).padStart(2,'0');
+  }
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+
+  /* ── SCROLL REVEAL ── */
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
